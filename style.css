@@ -1,0 +1,129 @@
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-list{
+    display: flex;
+    gap: 55px;
+    align-items: center;
+}
+.nav-link{
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #95E1D3;
+    position: relative;
+}
+.nav-link:hover{
+    color: #F38181;
+}
+.nav-link.active::after{
+    position: absolute;
+    bottom: -10px;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+   background-color:#F38181;
+}
+@media (max-width: 768px) { 
+
+  .burger-btn {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 5px;
+
+        background: none;
+
+        border: none;
+
+        cursor: pointer;
+
+        padding: 4px;
+
+    }
+
+
+
+    .burger-line {
+
+        display: block;
+
+        width: 25px;
+
+        height: 2px;
+
+        background-color: #000000;
+
+        transition: transform 0.3s ease, opacity 0.3s ease;
+
+    }
+
+
+
+    /* Меню заховане */
+
+    .nav-list {
+
+        display: none;
+
+    }
+
+
+
+    /* Меню відкрите — клас додає JS */
+
+    .nav.is-open .nav-list {
+
+        display: flex;
+
+        flex-direction: column;
+
+        position: absolute;
+
+        top: 35px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 16px 20px;
+
+        background: #0e0d0d;
+
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+    }
+
+
+
+    /* Анімація кнопки коли меню відкрите */
+
+    .nav.is-open .burger-line:nth-child(1) {
+
+        transform: translateY(7px) rotate(45deg);
+
+    }
+
+
+
+    .nav.is-open .burger-line:nth-child(2) {
+
+        opacity: 0;
+
+    }
+
+
+
+    .nav.is-open .burger-line:nth-child(3) {
+
+        transform: translateY(-7px) rotate(-45deg);
+
+    }
+
+}
